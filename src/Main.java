@@ -15,7 +15,15 @@ public class Main {
         drapiezne.add(sum);
 
         Wędka wedka = new Wędka();
-        StawPrywatny Staw = new StawPrywatny("Blazeja", 5, 10, 3);
-        Wedkarz Ja = new Wedkarz(1, wedka, "D");
+
+        Rzeka Warta = new Rzeka("Warta", 3, 300);
+        StawPrywatny Staw = new StawPrywatny("Blazeja", 5, 50, 3);
+
+        Wedkarz Ja = new Wedkarz(1, wedka, 1);
+
+        ZwiazekWedkarski ZWPoznan = new ZwiazekWedkarski("Poznan");
+        ZWPoznan.nadajZezwolenie(Ja,2);
+        ZWPoznan.dodajWode(Warta);
+        ZWPoznan.podniesJakoscWody(Warta,2);
     }
 }

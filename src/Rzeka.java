@@ -1,8 +1,8 @@
 public class Rzeka implements IWody{
 
 
-    private int liczbaRyb, jakoscWody;
-    private String nazwa, typ = "1";
+    private int liczbaRyb, jakoscWody,typ = 1;
+    private String nazwa;
 
     public Rzeka(String _nazwa, int _jakoscWody, int _iloscRyb){
         this.liczbaRyb = _iloscRyb;
@@ -24,6 +24,8 @@ public class Rzeka implements IWody{
     @Override
     public void increaseQuality(int liczba) {
         this.jakoscWody += liczba;
+        if(this.jakoscWody > 10)
+            this.jakoscWody = 10;
     }
 
     @Override
@@ -45,7 +47,7 @@ public class Rzeka implements IWody{
         return 1;
     }
     @Override
-    public String getType(){
+    public int getType(){
         return typ;
     }
 }

@@ -1,7 +1,7 @@
 public class Jezioro implements IWody {
 
-    private String nazwa, typ = "3";
-    private int liczbaRyb, jakoscWody, liczbaStanowisk, liczbaWolnychStanowisk;
+    private String nazwa;
+    private int liczbaRyb, jakoscWody, liczbaStanowisk, liczbaWolnychStanowisk, typ = 3;
 
     public Jezioro(String _nazwa, int _jakoscWody, int _iloscRyb, int _liczbaStanowisk){
         this.liczbaRyb = _iloscRyb;
@@ -53,7 +53,7 @@ public class Jezioro implements IWody {
             return false;
     }
     @Override
-    public String getType(){
+    public int getType(){
         return typ;
     }
 }

@@ -55,4 +55,11 @@ public class Ryba {
                 return 0;
         }
     }
+    public int getWielkosc(){
+        return this.wielkosc;
+    }
+
+    public String getNazwa(){
+        return this.nazwa;
+    }
 }

@@ -14,16 +14,21 @@ public class Main {
         drapiezne.add(okon);
         drapiezne.add(sum);
 
-        Wędka wedka = new Wędka();
+        Wędka wedka = new Wędka("spinning", 1);
 
-        Rzeka Warta = new Rzeka("Warta", 3, 300);
-        StawPrywatny Staw = new StawPrywatny("Blazeja", 5, 50, 3);
+        Jezioro kiekrz = new Jezioro("Kierskie",8, 120, 30, drapiezne);
+        Rzeka warta = new Rzeka("Warta", 3, 300, drapiezne);
+        StawPrywatny Staw = new StawPrywatny("Blazeja", 5, 50, 3, drapiezne);
 
         Wedkarz Ja = new Wedkarz(1, wedka, 1);
 
         ZwiazekWedkarski ZWPoznan = new ZwiazekWedkarski("Poznan");
-        ZWPoznan.nadajZezwolenie(Ja,2);
-        ZWPoznan.dodajWode(Warta);
-        ZWPoznan.podniesJakoscWody(Warta,2);
+        ZWPoznan.nadajZezwolenie(Ja,3);
+        ZWPoznan.dodajWode(warta);
+        ZWPoznan.podniesJakoscWody(warta,2);
+
+        Ja.idzNadWode(kiekrz);
+        System.out.println("Jestem nad " + Ja.getGdzie().getName());
+        Ja.zlapRybe();
     }
 }

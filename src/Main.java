@@ -27,6 +27,16 @@ public class Main {
         ZWPoznan.dodajWode(warta);
         ZWPoznan.podniesJakoscWody(warta,2);
 
+        Ja.idzNadWode(warta);
+        System.out.println("Jestem nad " + Ja.getGdzie().getName());
+        Ja.zlapRybe();
+
+        System.out.println("Jakosc wody w " + ZWPoznan.getWodyZwiazku().get(ZWPoznan.getWodyZwiazku().indexOf(warta)).getName() + "jest równa " + ZWPoznan.getWodyZwiazku().get(ZWPoznan.getWodyZwiazku().indexOf(warta)).getQuality());
+        ZWPoznan.podniesJakoscWody(warta, 2);
+        System.out.println("W " + ZWPoznan.getWodyZwiazku().get(ZWPoznan.getWodyZwiazku().indexOf(warta)).getName() + " jest " + ZWPoznan.getWodyZwiazku().get(ZWPoznan.getWodyZwiazku().indexOf(warta)).getFN() + " ryb.");
+
+        ZWPoznan.getWodyZwiazku().get(ZWPoznan.getWodyZwiazku().indexOf(warta)).increaseFN(20);
+
         Ja.idzNadWode(kiekrz);
         System.out.println("Jestem nad " + Ja.getGdzie().getName());
         Ja.zlapRybe();

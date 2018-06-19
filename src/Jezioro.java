@@ -25,6 +25,7 @@ public class Jezioro implements IWody {
             return 0;
     }
     public Ryba sprobujZlapac(Wędka wedka){
+
         if (this.liczbaRyb > 0){
             for (int i=0; i<ryby.size();i++){
                 int szansa = ryby.get(i).szansaZlapania(wedka);
@@ -55,7 +56,7 @@ public class Jezioro implements IWody {
 
     @Override
     public int getFN() {
-        return this.liczbaRyb;
+        return liczbaRyb;
     }
 
     @Override
@@ -68,5 +69,10 @@ public class Jezioro implements IWody {
     @Override
     public int getType(){
         return typ;
+    }
+
+    @Override
+    public void increaseFN(int ile) {
+        this.liczbaRyb = liczbaRyb + ile;
     }
 }

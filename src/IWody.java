@@ -8,5 +8,6 @@ public interface IWody {
     int zajmijStanowisko();
     int getType();
     Ryba sprobujZlapac(Wędka wedka);
+    void increaseFN(int ile);
 
 }

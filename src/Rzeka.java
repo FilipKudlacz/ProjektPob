@@ -17,6 +17,11 @@ public class Rzeka implements IWody{
     }
 
     public Ryba sprobujZlapac(Wędka wedka){
+        if (this.jakoscWody <6){
+            int wiecej = 6 - jakoscWody;
+            System.out.println("Łowisko zamknięte z powodu zbyt słabej jakości wody. Zwiększ jakoś wody przynajmniej o " + wiecej + ".");
+            return null;
+        }
         if (this.liczbaRyb > 0){
             for (int i=0; i<ryby.size();i++){
                 int szansa = ryby.get(i).szansaZlapania(wedka);
@@ -27,6 +32,8 @@ public class Rzeka implements IWody{
                 }
 
             }
+        }else{
+            System.out.println("W rzece " + nazwa + " nie ma już ryb.");
         }
         return null;
     }
@@ -53,6 +60,7 @@ public class Rzeka implements IWody{
         return this.liczbaRyb;
     }
 
+
     @Override
     public boolean jestMiejsce() {
         return true;
@@ -64,5 +72,10 @@ public class Rzeka implements IWody{
     @Override
     public int getType(){
         return typ;
+    }
+
+    @Override
+    public void increaseFN(int ile) {
+        this.liczbaRyb = liczbaRyb + ile;
     }
 }

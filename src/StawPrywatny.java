@@ -25,6 +25,10 @@ public class StawPrywatny implements IWody {
             return 0;
     }
     public Ryba sprobujZlapac(Wędka wedka){
+        if(this.jakoscWody < 5){
+            System.out.println("Łowisko zakmnięte z powowdu zbyt słabej jakości wody");
+            return null;
+        }
         if (this.liczbaRyb > 0){
             for (int i=0; i<ryby.size();i++){
                 int szansa = ryby.get(i).szansaZlapania(wedka);
@@ -70,4 +74,9 @@ public class StawPrywatny implements IWody {
     public int getType(){
         return typ;
      }
+
+    @Override
+    public void increaseFN(int ile) {
+        this.liczbaRyb = liczbaRyb + ile;
+    }
 }

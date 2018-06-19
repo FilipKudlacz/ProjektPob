@@ -4,7 +4,7 @@ import java.util.List;
 public class ZwiazekWedkarski implements IWlasciciel{
 
     String miejscowosc;
-    List<IWody> wodyZwiazku = new ArrayList();
+    private List<IWody> wodyZwiazku = new ArrayList();
 
 
     public ZwiazekWedkarski(String _miejscowosc){
@@ -18,6 +18,9 @@ public class ZwiazekWedkarski implements IWlasciciel{
                 woda.increaseQuality(ilosc);
             }
         }
+    }
+    public List<IWody> getWodyZwiazku(){
+        return this.wodyZwiazku;
     }
 
     @Override

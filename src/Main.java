@@ -14,11 +14,13 @@ public class Main {
         drapiezne.add(okon);
         drapiezne.add(sum);
 
+        WlascicielPrywatny blazej = new WlascicielPrywatny("blazej", "771727819");
+
         Wędka wedka = new Wędka("spinning", 1);
 
         Jezioro kiekrz = new Jezioro("Kierskie",8, 120, 30, drapiezne);
         Rzeka warta = new Rzeka("Warta", 3, 300, drapiezne);
-        StawPrywatny Staw = new StawPrywatny("Blazeja", 5, 50, 3, drapiezne);
+        StawPrywatny Staw = new StawPrywatny("Blazeja", 5, 50, 3, drapiezne, blazej);
 
         Wedkarz Ja = new Wedkarz(1, wedka, 1);
 

@@ -6,14 +6,16 @@ public class StawPrywatny implements IWody {
     private String nazwa;
     private int liczbaRyb, jakoscWody, liczbaStanowisk, liczbaWolnychStanowisk, typ = 2;
     private List<Ryba> ryby;
+    private IWlasciciel wlasciciel;
 
-    public StawPrywatny(String _nazwa, int _jakoscWody, int _iloscRyb, int _liczbaStanowisk, List<Ryba> _ryby){
+    public StawPrywatny(String _nazwa, int _jakoscWody, int _iloscRyb, int _liczbaStanowisk, List<Ryba> _ryby, IWlasciciel wlasciciel){
         this.liczbaRyb = _iloscRyb;
         this.jakoscWody = _jakoscWody;
         this.liczbaStanowisk = _liczbaStanowisk;
         this.nazwa = _nazwa;
         this.liczbaWolnychStanowisk = this.liczbaStanowisk;
         this.ryby = _ryby;
+        this.wlasciciel = wlasciciel;
     }
 
     public int zajmijStanowisko(){
@@ -78,5 +80,9 @@ public class StawPrywatny implements IWody {
     @Override
     public void increaseFN(int ile) {
         this.liczbaRyb = liczbaRyb + ile;
+    }
+
+    public IWlasciciel getWlasciciel() {
+        return wlasciciel;
     }
 }
